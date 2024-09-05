@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+
+{% block header %}
+<h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %} 
+
+{% block content %}
+<div id="register-form" class="card">
+  <p class="alert info">* required</p>
+  <form method="post">
+    <label for="player_name">Player Name *</label>
+    <br>
+    <input name="player_name" id="player_name" required />
+    <br>
+    <label for="player_bio">Player Bio</label>
+    <br>
+    <textarea name="player_bio" id="player_bio"></textarea>
+    <br>
+    <label for="player_image">Player Image</label>
+    <br>
+    <input name="player_image" id="player_image" />
+    <br>
+    <label for="password">Password *</label>
+    <br>
+    <input type="password" name="password" id="password" required />
+    <br>
+    <input type="submit" value="Register" />
+  </form>
+  <div class="alert info">
+    <p>Already registered? <a href="/auth/login">Log in</a> here.</p>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,161 @@
+/*** Color Palette
+#01204E
+#028391
+#F6DCAC
+#FEAE6F
+#F8F4E1
+***/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: #606160;
+  background-color: #f8f4e1;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/**** navigation styles *******/
+nav {
+  width: 100%;
+  background-color: #01204e;
+  height: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Nunito, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+}
+#nav-logo {
+  max-height: 60px;
+}
+nav a {
+  display: block;
+  padding: 14px;
+  color: #f8f4e1;
+  text-decoration: none;
+  background-color: #028391;
+}
+nav a:hover {
+  color: #feae6f;
+}
+/******* HTML tag styles *********/
+main {
+  display: grid;
+  width: 80vw;
+  margin: auto;
+}
+
+input,
+textarea {
+  margin: 20px 0;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgb(80, 80, 80);
+  border-radius: 10px;
+}
+textarea {
+  height: 20vh;
+}
+input:hover {
+  box-shadow: 2px 2px 3px rgba(190, 190, 190, 0.94);
+}
+input[type="submit"] {
+  background-color: purple;
+  width: 180px;
+  display: block;
+  margin: 0px auto;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: indigo;
+}
+
+/***** Messages ****/
+.alert {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.error {
+  color: rgb(110, 1, 1);
+  background-color: rgb(250, 200, 200);
+}
+.success {
+  color: rgb(0, 120, 30);
+  background-color: rgb(211, 254, 211);
+}
+.warning {
+  color: rgb(100, 100, 0);
+  background-color: rgb(255, 250, 200);
+}
+.info {
+  color: rgb(0, 55, 125);
+  background-color: rgb(200, 230, 250);
+}
+
+/**** General page layout and styles ****/
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 100%;
+  padding: 40px;
+}
+.content {
+  margin-top: 40px;
+  background-color: #fff;
+}
+
+#page-header {
+  text-align: center;
+  background-color: #feae6f;
+}

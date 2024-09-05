@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Log In{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div id="login-form" class="card">
+<p class="alert info">* required</p>
+  <form method="post">
+    <label for="player_name">Player Name *</label>
+  <br>
+    <input name="player_name" id="player_name" required>
+  <br>
+    <label for="password">Password *</label>
+  <br>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Log In">
+  </form>
+  <div class="alert info">
+    <p>Don't have an account yet? <a href="/auth/register">Register</a> here.</p>
+  </div>
+</div>
+{% endblock %}
