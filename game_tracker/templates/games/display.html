@@ -1,14 +1,10 @@
-{% extends 'base.html' %} {% block header %}
-<h1>{% block title %}Games{% endblock %}</h1>
-{% if g.player %}
-<a class="action" href="#">New</a>
-{% endif %} {% endblock %} {% block content %}
-<form id="search-form" action="" method="post">
-  <input id="search-field" type="text" name="search-field" />
-  <button id="search-button" type="submit">
-    <span class="material-symbols-rounded">search</span>
-  </button>
-</form>
+{% extends 'base.html' %} 
+
+{% block header %}
+<h1>{% block title %}{{ game['game_name'] }}{% endblock %}</h1>
+{% endblock %} 
+
+{% block content %}
 <table id="game-table">
   <thead>
     <tr>

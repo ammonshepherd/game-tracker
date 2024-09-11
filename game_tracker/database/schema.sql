@@ -34,6 +34,6 @@ CREATE TABLE games_players_played (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     game_played_id INTEGER NOT NULL,
     player_id INTEGER NOT NULL,
-    FOREIGN KEY (game_played_id) REFERENCES game (id),
+    FOREIGN KEY (game_played_id) REFERENCES game_played (id),
     FOREIGN KEY (player_id) REFERENCES player (id)
 );

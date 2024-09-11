@@ -16,12 +16,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
   color: #606160;
-  background-color: #f8f4e1;
 }
 img,
 picture,
@@ -51,16 +46,29 @@ h6 {
   isolation: isolate;
 }
 
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+}
+
 /**** navigation styles *******/
 nav {
   width: 100%;
   background-color: #01204e;
+  font-weight: 900;
   height: 60px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
-  font-family: Nunito, sans-serif;
   text-transform: uppercase;
   color: #fff;
 }
@@ -75,7 +83,14 @@ nav a {
   background-color: #028391;
 }
 nav a:hover {
-  color: #feae6f;
+  color: #ffffff;
+  background-color: #0e606a;
+}
+.nav-button {
+  border-radius: 9px;
+}
+.nav-button > span {
+  vertical-align: middle;
 }
 /******* HTML tag styles *********/
 main {
@@ -105,9 +120,6 @@ input[type="submit"] {
   margin: 0px auto;
   border: none;
   border-radius: 5px;
-  font-weight: bold;
-  font-size: 18px;
-  font-family: "Courier New", Courier, monospace;
   color: white;
   margin-top: 30px;
   padding: 20px;
@@ -151,11 +163,61 @@ input[type="submit"]:hover {
   padding: 40px;
 }
 .content {
-  margin-top: 40px;
   background-color: #fff;
 }
 
 #page-header {
   text-align: center;
-  background-color: #feae6f;
+  margin: 20px;
+}
+
+/*** home page ***/
+#search-form {
+  width: 40%;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+  border: 1px solid #888;
+  border-radius: 20px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+#search-field {
+    font-size: 1.4rem;
+}
+#search-button {
+  border: none;
+  background-color: #fff;
+}
+#search-button:hover {
+    cursor: pointer;
+}
+
+#game-table {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+#game-table > th, td {
+    padding: 10px;
+}
+#add-game-col {
+    text-align: center;
+}
+.add-game-button {
+    background-color: aqua;
+    border-radius: 4px;
+    padding: 10px;
+}
+.add-game-button:hover {
+    background-color: rgb(0, 255, 162);
+}
+
+@media screen and (min-width: 700px) {
+  #search-form {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    gap: 20px;
+  }
 }

@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %} - Game Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
@@ -11,20 +14,21 @@
     <header>
       <nav>
         <h1>Game Tracker</h1>
+        <a class="nav-button" href="#"><span class="material-symbols-rounded">add</span> player</a>
+        <a class="nav-button" href="/game/create"><span class="material-symbols-rounded">add</span> game</a>
+        <a class="nav-button" href="#"><span class="material-symbols-rounded">add</span> game played</a>
         {% if g.player %}
-            <span>{{ g.player['player_name'] }}</span>
-            <a href="{{ url_for('auth.logout') }}">Log Out</a>
+        <span>{{ g.player['player_name'] }}</span>
+        <a href="{{ url_for('auth.logout') }}">Log Out</a>
         {% else %}
-            <a href="{{ url_for('auth.register') }}">Register</a>
-            <a href="{{ url_for('auth.login') }}">Log In</a>
+        <a href="{{ url_for('auth.login') }}">Log In</a>
         {% endif %}
       </nav>
     </header>
 
+    <div id="page-header">{% block header %}{% endblock %}</div>
     <main>
       <section class="content">
-        
-<div id="page-header">{% block header %}{% endblock %}</div>
         {% for message in get_flashed_messages() %}
         <div class="alert error">{{ message }}</div>
         {% endfor %} {% block content %}{% endblock %}
