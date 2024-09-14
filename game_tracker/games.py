@@ -19,9 +19,22 @@ def index():
 @bp.route('/game/<int:id>')
 def game(id):
     db = get_db()
-    game = db.execute('SELECT * FROM game WHERE id = ?', (id)).fetchone()
-    plays = db.execute('SELECT * FROM game_played JOIN games_players_played ON game_played.id = games_players_played.game_played_id')
-    return render_template('/games/display.html', game=game)
+    game = db.execute("SELECT * FROM game WHERE id = ?", (id,)).fetchone()
+    plays = db.execute("SELECT gp.id AS game_played_id, gp.date_played, p.player_name  FROM game_played gp LEFT JOIN player p ON gp.player_id = p.id WHERE gp.game_id = ? ORDER BY gp.date_played DESC", str(id))
+    # page contents do not display when plays is used in a for loop in here
+    # players = []
+    # for play in plays:
+    #     print(play['game_played_id'])
+    #     di = play['game_played_id']
+        # players.append(5)
+        # players.append(
+        #     db.execute('SELECT p.id AS player_id, p.player_name FROM games_players_played gpp JOIN player p ON gpp.player_id = p.id WHERE gpp.game_played_id = ?', 
+        #                         #   (str(play['game_played_id']),)
+        #                         (55,)
+        #                 ).fetchall()
+        #     )
+    # return render_template('/games/display.html', game=game, plays=plays, players=players)
+    return render_template('/games/display.html', game=game, plays=plays)
 
 @bp.route('/game/create', methods=('GET', 'POST'))
 @login_required

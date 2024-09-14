@@ -8,32 +8,22 @@
 <table id="game-table">
   <thead>
     <tr>
-      <th>Game</th>
-      <th>Last Played</th>
-      <th>Last Winner</th>
-      <th>Add Game Played</th>
+      <th>Date Played</th>
+      <th>Players</th>
+      <th>Winner</th>
     </tr>
   </thead>
   <tbody>
-    {% for game in games %}
+    {% for play in plays %}
     <tr class="game">
-      <td><a class="game-name" href="/game/{{ game['game_id']}}">{{ game['game_name'] }}</a></td>
+      <td>{{ play['date_played'] }}</td>
       <td>
-        {% if game['last_played'] is none %}
-            Not played yet
-        {% else %}
-            {{ game['last_played'] }}
-        {% endif %}
+        some players names here
       </td>
       <td>
-        {% if game['player_name'] is none %}
-            No winner yet
-        {% else %}
-            <a class="game-winner" href="#">{{ game['player_name'] }}</a>
-        {% endif %}
-      </td>
-      <td id="add-game-col">
-        <a class="add-game-button" href="#"><span class="material-symbols-rounded">add</span></a>
+        <a href="/player/{{ play['player_id'] }}">
+          {{ play['player_name'] }}
+        </a>
       </td>
     </tr>
     {% endfor %}
